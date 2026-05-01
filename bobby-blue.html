@@ -30,7 +30,7 @@
 
 ```
 /* Header */
-.header{display:flex;justify-content:space-between;align-items:center;padding:env(safe-area-inset-top,16px) 18px 14px;padding-top:calc(env(safe-area-inset-top,0px) + 18px);background:#fff;border-bottom:1px solid #DDD9D0;position:sticky;top:0;z-index:100;box-shadow:0 1px 6px #00000009;}
+.header{display:flex;justify-content:space-between;align-items:center;padding:14px 18px 14px;padding-top:calc(env(safe-area-inset-top,0px) + 14px);padding-left:max(18px, env(safe-area-inset-left,18px));padding-right:max(18px, env(safe-area-inset-right,18px));background:#fff;border-bottom:1px solid #DDD9D0;position:sticky;top:0;z-index:100;box-shadow:0 1px 6px #00000009;}
 .title{font-size:19px;font-family:'Playfair Display',serif;font-weight:800;letter-spacing:-0.3px;}
 .hsub{font-size:10px;color:#A89F94;letter-spacing:1.2px;text-transform:uppercase;margin-top:2px;}
 .tabs{display:flex;gap:6px;}
@@ -296,21 +296,17 @@ const ringHTML = (pct, color, label, sub, size=118) => {
 const timelineHTML = sessions => {
   const tf=ts=>(new Date(ts).getHours()*60+new Date(ts).getMinutes())/(24*60);
   const blocks=sessions.map(s=>{
-    const l=tf(s.start)*100, w=Math.max((tf(s.end)-tf(s.start))*100, 1.2);
+    const l=tf(s.start)*100, w=Math.max((tf(s.end)-tf(s.start))*100,1.2);
     const dur=fmtDur(s.end-s.start);
-    return `<div style="position:absolute;top:6px;bottom:6px;left:${l}%;width:${w}%;background:${C.blueDeep};border-radius:5px;opacity:0.75;display:flex;align-items:center;justify-content:center;overflow:hidden;">
-      ${w>8?`<span style="font-size:9px;color:#fff;font-weight:700;white-space:nowrap;padding:0 3px">${dur}</span>`:""}
-    </div>`;
+    return `<div style="position:absolute;top:0;bottom:0;left:${l}%;width:${w}%;background:${C.blueDeep};border-radius:4px;opacity:0.78;display:flex;align-items:center;justify-content:center;overflow:hidden;">${w>8?`<span style="font-size:9px;color:#fff;font-weight:700;white-space:nowrap;padding:0 3px">${dur}</span>`:""}</div>`;
   }).join("");
-  const ticks=[0,3,6,9,12,15,18,21].map(h=>`
-    <div style="position:absolute;top:0;bottom:0;left:${h/24*100}%;border-left:1px solid ${C.border};">
-      <span style="position:absolute;bottom:-18px;left:2px;font-size:10px;color:${C.textSoft};font-family:'DM Sans',sans-serif;white-space:nowrap">${h}h</span>
-    </div>`).join("");
+  const tickHours=[0,3,6,9,12,15,18,21,24];
+  const tickMarks=tickHours.map(h=>`<div style="position:absolute;left:${h/24*100}%;top:0;bottom:0;border-left:1px solid ${h===0||h===24?'#7A7066':'#DDD9D0'};"></div>`).join("");
+  const tickLabels=tickHours.filter(h=>h<24).map(h=>`<span style="position:absolute;left:${h/24*100}%;font-size:9px;color:#A89F94;font-family:'DM Sans',sans-serif;transform:translateX(-50%);white-space:nowrap;">${h}h</span>`).join("");
   return `
-    <p class="micro" style="margin-bottom:10px">Répartition sur 24h</p>
-    <div style="position:relative;height:40px;background:${C.bgSoft};border-radius:10px;overflow:hidden;margin-bottom:24px">
-      ${blocks}${ticks}
-    </div>`;
+    <p class="micro" style="margin-bottom:8px">Répartition sur 24h</p>
+    <div style="position:relative;height:34px;background:#EDE9E2;border-radius:8px;overflow:hidden;">${tickMarks}${blocks}</div>
+    <div style="position:relative;height:18px;margin-top:3px;">${tickLabels}</div>`;
 };
 
 // ─── Dot Calendar ─────────────────────────────────────────────────────────────
