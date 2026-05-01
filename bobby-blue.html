@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
   <meta charset="UTF-8"/>
@@ -27,98 +28,101 @@
     #app{min-height:100vh;}
     .hidden{display:none!important;}
 
-    /* Header */
-    .header{display:flex;justify-content:space-between;align-items:center;padding:env(safe-area-inset-top,16px) 18px 14px;padding-top:calc(env(safe-area-inset-top,0px) + 18px);background:#fff;border-bottom:1px solid #DDD9D0;position:sticky;top:0;z-index:100;box-shadow:0 1px 6px #00000009;}
-    .title{font-size:19px;font-family:'Playfair Display',serif;font-weight:800;letter-spacing:-0.3px;}
-    .hsub{font-size:10px;color:#A89F94;letter-spacing:1.2px;text-transform:uppercase;margin-top:2px;}
-    .tabs{display:flex;gap:6px;}
-    .tab-btn{padding:7px 13px;border-radius:9px;font-size:11px;font-weight:600;font-family:'DM Sans',sans-serif;border:1.5px solid #DDD9D0;background:transparent;color:#7A7066;}
-    .tab-btn.active{background:#4A7BA8;color:#fff;border-color:#4A7BA8;}
+```
+/* Header */
+.header{display:flex;justify-content:space-between;align-items:center;padding:env(safe-area-inset-top,16px) 18px 14px;padding-top:calc(env(safe-area-inset-top,0px) + 18px);background:#fff;border-bottom:1px solid #DDD9D0;position:sticky;top:0;z-index:100;box-shadow:0 1px 6px #00000009;}
+.title{font-size:19px;font-family:'Playfair Display',serif;font-weight:800;letter-spacing:-0.3px;}
+.hsub{font-size:10px;color:#A89F94;letter-spacing:1.2px;text-transform:uppercase;margin-top:2px;}
+.tabs{display:flex;gap:6px;}
+.tab-btn{padding:7px 13px;border-radius:9px;font-size:11px;font-weight:600;font-family:'DM Sans',sans-serif;border:1.5px solid #DDD9D0;background:transparent;color:#7A7066;}
+.tab-btn.active{background:#4A7BA8;color:#fff;border-color:#4A7BA8;}
 
-    /* Page */
-    .page{padding:14px 14px 0;}
-    .pb48{height:48px;}
+/* Page */
+.page{padding:14px 14px 0;}
+.pb48{height:48px;}
 
-    /* Card */
-    .card{background:#fff;border:1px solid #DDD9D0;border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 1px 4px #00000008;}
-    .sec-title{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#A89F94;font-weight:600;margin-bottom:12px;}
-    .lbl{display:block;font-size:10px;color:#A89F94;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;font-weight:600;}
+/* Card */
+.card{background:#fff;border:1px solid #DDD9D0;border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 1px 4px #00000008;}
+.sec-title{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#A89F94;font-weight:600;margin-bottom:12px;}
+.lbl{display:block;font-size:10px;color:#A89F94;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;font-weight:600;}
 
-    /* Ring card */
-    .summary-card{display:flex;gap:18px;align-items:center;}
-    .ring-wrap{position:relative;flex-shrink:0;}
-    .ring-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;}
-    .ring-label{font-size:20px;font-weight:800;color:#2C2825;letter-spacing:-0.5px;font-family:'Playfair Display',serif;}
-    .ring-sub{font-size:9px;color:#A89F94;text-transform:uppercase;letter-spacing:1.5px;}
-    .ring-info{flex:1;display:flex;flex-direction:column;gap:7px;}
-    .status-pill{display:inline-block;padding:4px 12px;border-radius:100px;font-size:11px;font-weight:700;}
-    .info-text{font-size:13px;color:#7A7066;}
-    .info-small{font-size:12px;color:#A89F94;}
+/* Ring card */
+.summary-card{display:flex;gap:18px;align-items:center;}
+.ring-wrap{position:relative;flex-shrink:0;}
+.ring-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;}
+.ring-label{font-size:20px;font-weight:800;color:#2C2825;letter-spacing:-0.5px;font-family:'Playfair Display',serif;}
+.ring-sub{font-size:9px;color:#A89F94;text-transform:uppercase;letter-spacing:1.5px;}
+.ring-info{flex:1;display:flex;flex-direction:column;gap:7px;}
+.status-pill{display:inline-block;padding:4px 12px;border-radius:100px;font-size:11px;font-weight:700;}
+.info-text{font-size:13px;color:#7A7066;}
+.info-small{font-size:12px;color:#A89F94;}
 
-    /* Timeline */
-    .timeline-bar{position:relative;height:26px;background:#EDE9E2;border-radius:8px;overflow:hidden;}
-    .tl-block{position:absolute;top:4px;bottom:4px;background:#7B9EC4;border-radius:3px;opacity:0.65;}
-    .tl-tick{position:absolute;top:0;bottom:0;border-left:1px solid #DDD9D0;}
-    .tl-tick-lbl{position:absolute;top:3px;left:2px;font-size:7px;color:#A89F94;}
-    .micro{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#A89F94;font-weight:600;margin-bottom:6px;}
+/* Timeline */
+.timeline-bar{position:relative;height:26px;background:#EDE9E2;border-radius:8px;overflow:hidden;}
+.tl-block{position:absolute;top:4px;bottom:4px;background:#7B9EC4;border-radius:3px;opacity:0.65;}
+.tl-tick{position:absolute;top:0;bottom:0;border-left:1px solid #DDD9D0;}
+.tl-tick-lbl{position:absolute;top:3px;left:2px;font-size:7px;color:#A89F94;}
+.micro{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#A89F94;font-weight:600;margin-bottom:6px;}
 
-    /* Form */
-    .form-row{display:flex;gap:10px;margin-bottom:10px;}
-    .form-col{flex:1;}
-    .form-mb{margin-bottom:10px;}
-    .err{font-size:12px;color:#C0736B;margin-bottom:8px;}
-    .add-btn{width:100%;padding:13px;background:#4A7BA8;color:#fff;border:none;border-radius:11px;font-size:14px;font-weight:600;font-family:'DM Sans',sans-serif;}
+/* Form */
+.form-row{display:flex;gap:10px;margin-bottom:10px;}
+.form-col{flex:1;}
+.form-mb{margin-bottom:10px;}
+.err{font-size:12px;color:#C0736B;margin-bottom:8px;}
+.add-btn{width:100%;padding:13px;background:#4A7BA8;color:#fff;border:none;border-radius:11px;font-size:14px;font-weight:600;font-family:'DM Sans',sans-serif;}
 
-    /* Nap rows */
-    .nap-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #EDE9E2;}
-    .nap-bar{width:3px;height:32px;background:#7B9EC4;border-radius:3px;flex-shrink:0;}
-    .nap-times{flex:1;font-size:14px;font-weight:600;color:#2C2825;}
-    .nap-dur{font-size:13px;font-weight:700;color:#D4956A;min-width:50px;text-align:right;}
-    .del-btn{background:none;border:none;color:#A89F94;font-size:12px;padding:4px 6px;border-radius:6px;}
+/* Nap rows */
+.nap-row{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #EDE9E2;}
+.nap-bar{width:3px;height:32px;background:#7B9EC4;border-radius:3px;flex-shrink:0;}
+.nap-times{flex:1;font-size:14px;font-weight:600;color:#2C2825;}
+.nap-dur{font-size:13px;font-weight:700;color:#D4956A;min-width:50px;text-align:right;}
+.del-btn{background:none;border:none;color:#A89F94;font-size:12px;padding:4px 6px;border-radius:6px;}
 
-    /* KPIs */
-    .kpi-row{display:flex;gap:10px;margin-bottom:12px;}
-    .kpi{flex:1;background:#fff;border:1px solid #DDD9D0;border-radius:14px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;}
-    .kpi-val{font-size:18px;font-weight:800;font-family:'Playfair Display',serif;letter-spacing:-0.5px;}
-    .kpi-lbl{font-size:9px;color:#A89F94;text-transform:uppercase;letter-spacing:0.8px;text-align:center;white-space:pre-line;line-height:1.4;}
+/* KPIs */
+.kpi-row{display:flex;gap:10px;margin-bottom:12px;}
+.kpi{flex:1;background:#fff;border:1px solid #DDD9D0;border-radius:14px;padding:12px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;}
+.kpi-val{font-size:18px;font-weight:800;font-family:'Playfair Display',serif;letter-spacing:-0.5px;}
+.kpi-lbl{font-size:9px;color:#A89F94;text-transform:uppercase;letter-spacing:0.8px;text-align:center;white-space:pre-line;line-height:1.4;}
 
-    /* Dot calendar */
-    .dot-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
-    .dot-hdr{text-align:center;font-size:9px;color:#A89F94;font-weight:700;padding-bottom:2px;}
-    .dot-cell{aspect-ratio:1;border-radius:7px;display:flex;align-items:center;justify-content:center;}
-    .dot{width:6px;height:6px;border-radius:50%;}
-    .legend{display:flex;gap:14px;margin-top:12px;flex-wrap:wrap;}
-    .legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:#7A7066;}
-    .legend-dot{width:8px;height:8px;border-radius:50%;display:inline-block;}
+/* Dot calendar */
+.dot-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
+.dot-hdr{text-align:center;font-size:9px;color:#A89F94;font-weight:700;padding-bottom:2px;}
+.dot-cell{aspect-ratio:1;border-radius:7px;display:flex;align-items:center;justify-content:center;}
+.dot{width:6px;height:6px;border-radius:50%;}
+.legend{display:flex;gap:14px;margin-top:12px;flex-wrap:wrap;}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:11px;color:#7A7066;}
+.legend-dot{width:8px;height:8px;border-radius:50%;display:inline-block;}
 
-    /* Period tabs */
-    .period-tabs{display:flex;gap:5px;margin:4px 0 12px;background:#EDE9E2;padding:4px;border-radius:12px;}
-    .period-btn{flex:1;padding:9px 8px;border-radius:9px;border:none;background:transparent;color:#A89F94;font-weight:400;font-size:12px;font-family:'DM Sans',sans-serif;}
-    .period-btn.active{background:#fff;color:#4A7BA8;font-weight:700;box-shadow:0 1px 4px #DDD9D0;}
+/* Period tabs */
+.period-tabs{display:flex;gap:5px;margin:4px 0 12px;background:#EDE9E2;padding:4px;border-radius:12px;}
+.period-btn{flex:1;padding:9px 8px;border-radius:9px;border:none;background:transparent;color:#A89F94;font-weight:400;font-size:12px;font-family:'DM Sans',sans-serif;}
+.period-btn.active{background:#fff;color:#4A7BA8;font-weight:700;box-shadow:0 1px 4px #DDD9D0;}
 
-    /* Bar chart note */
-    .chart-note{font-size:10px;color:#A89F94;margin-top:8px;text-align:center;}
+/* Bar chart note */
+.chart-note{font-size:10px;color:#A89F94;margin-top:8px;text-align:center;}
 
-    /* Week/month detail rows */
-    .detail-row{padding:12px 0;border-bottom:1px solid #EDE9E2;}
-    .detail-top{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
-    .detail-name{flex:1;font-size:13px;font-weight:600;color:#2C2825;}
-    .detail-h{font-size:14px;font-weight:800;font-family:'Playfair Display',serif;}
-    .detail-green{font-size:11px;color:#6BAE8E;font-weight:600;}
-    .prog-track{height:5px;background:#EDE9E2;border-radius:4px;overflow:hidden;}
-    .prog-bar{height:100%;border-radius:4px;transition:width 0.5s;}
+/* Week/month detail rows */
+.detail-row{padding:12px 0;border-bottom:1px solid #EDE9E2;}
+.detail-top{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.detail-name{flex:1;font-size:13px;font-weight:600;color:#2C2825;}
+.detail-h{font-size:14px;font-weight:800;font-family:'Playfair Display',serif;}
+.detail-green{font-size:11px;color:#6BAE8E;font-weight:600;}
+.prog-track{height:5px;background:#EDE9E2;border-radius:4px;overflow:hidden;}
+.prog-bar{height:100%;border-radius:4px;transition:width 0.5s;}
 
-    /* Journal rows */
-    .journal-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #EDE9E2;}
-    .j-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
-    .j-date{flex:1;font-size:12px;color:#7A7066;}
-    .j-h{font-size:13px;font-weight:700;color:#2C2825;}
-    .j-naps{font-size:11px;color:#A89F94;min-width:50px;text-align:right;}
+/* Journal rows */
+.journal-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #EDE9E2;}
+.j-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.j-date{flex:1;font-size:12px;color:#7A7066;}
+.j-h{font-size:13px;font-weight:700;color:#2C2825;}
+.j-naps{font-size:11px;color:#A89F94;min-width:50px;text-align:right;}
 
-    .month-name{font-size:13px;font-weight:600;color:#2C2825;display:block;text-transform:capitalize;}
-    .month-sub{font-size:11px;color:#A89F94;}
-    .month-h{font-size:15px;font-weight:800;font-family:'Playfair Display',serif;display:block;}
-    .month-green{font-size:11px;color:#6BAE8E;font-weight:600;}
+.month-name{font-size:13px;font-weight:600;color:#2C2825;display:block;text-transform:capitalize;}
+.month-sub{font-size:11px;color:#A89F94;}
+.month-h{font-size:15px;font-weight:800;font-family:'Playfair Display',serif;display:block;}
+.month-green{font-size:11px;color:#6BAE8E;font-weight:600;}
+```
+
   </style>
 </head>
 <body>
@@ -128,7 +132,7 @@
 // ─── Constants & theme ───────────────────────────────────────────────────────
 const TARGET_MIN = 18, TARGET_MAX = 20;
 const STORAGE_KEY = "bobby-blue-v1";
-const C = { green:"#6BAE8E", orange:"#D4956A", red:"#C0736B", blue:"#7B9EC4", blueDeep:"#4A7BA8", bgSoft:"#EDE9E2", border:"#DDD9D0", text:"#2C2825", textSoft:"#A89F94", textMid:"#7A7066" };
+const C = { green:"#52B788", orange:"#E89350", red:"#C0736B", blue:"#7B9EC4", blueDeep:"#4A7BA8", bgSoft:"#EDE9E2", border:"#DDD9D0", text:"#2C2825", textSoft:"#A89F94", textMid:"#7A7066" };
 const SL = { green:"Objectif ✓", orange:"En dessous", red:"Au-dessus" };
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
@@ -182,7 +186,7 @@ const setState = patch => { Object.assign(state,patch); saveData({sessions:state
 // ─── Computed ─────────────────────────────────────────────────────────────────
 const getComputed = () => {
   const { sessions } = state;
-  const todaySess = sessions.filter(s=>s.date===todayKey()).sort((a,b)=>a.start-b.start);
+  const todaySess = sessions.filter(s=>s.date===todayKey()).sort((a,b)=>b.start-a.start);
   const todayMs = todaySess.reduce((a,s)=>a+(s.end-s.start),0);
   const todayH = todayMs/3600000;
 
@@ -221,34 +225,54 @@ const getComputed = () => {
 };
 
 // ─── SVG Bar Chart ────────────────────────────────────────────────────────────
-const barChart = (data, valueKey, colorFn, height=165) => {
+const barChart = (data, valueKey, colorFn, height=180) => {
   if(!data.length) return `<p style="color:${C.textSoft};font-size:13px;font-style:italic">Pas encore de données.</p>`;
-  const max=Math.max(...data.map(d=>d[valueKey]||0),TARGET_MAX,1);
-  const W=100,H=height,padL=26,padB=22,padT=14,padR=8;
+  const max=Math.max(...data.map(d=>d[valueKey]||0),TARGET_MAX+2,1);
+  const W=360,H=height,padL=32,padB=28,padT=16,padR=12;
   const gW=W-padL-padR,gH=H-padB-padT;
-  const barW=Math.max(1.5,gW/data.length*0.52);
-  const xp=i=>padL+(i+0.5)*(gW/data.length);
+  const n=data.length;
+  const barW=Math.max(4,gW/n*0.62);
+  const xp=i=>padL+(i+0.5)*(gW/n);
   const yp=v=>padT+gH-(v/max)*gH;
 
   let rects="",lines="",labels="";
-  // target zone
-  rects+=`<rect x="${padL}" y="${yp(TARGET_MAX)}" width="${gW}" height="${yp(TARGET_MIN)-yp(TARGET_MAX)}" fill="${C.blue}18"/>`;
-  // grid
-  [TARGET_MIN,TARGET_MAX].forEach(v=>{ lines+=`<line x1="${padL}" x2="${W-padR}" y1="${yp(v)}" y2="${yp(v)}" stroke="${C.blue}66" stroke-width="0.5" stroke-dasharray="2,1.5"/>`; });
-  [0,5,10,15,20].forEach(v=>{ lines+=`<line x1="${padL}" x2="${W-padR}" y1="${yp(v)}" y2="${yp(v)}" stroke="${C.border}" stroke-width="0.3"/><text x="${padL-2}" y="${yp(v)+1.5}" text-anchor="end" font-size="3.8" fill="${C.textSoft}">${v}</text>`; });
-  // bars
-  data.forEach((d,i)=>{
-    const val=d[valueKey]||0, bH=Math.max((val/max)*gH,0.5);
-    const col=colorFn?colorFn(d):C.green;
-    const showL=data.length<=12||(i%Math.max(1,Math.floor(data.length/8))===0);
-    rects+=`<rect x="${xp(i)-barW/2}" y="${yp(val)}" width="${barW}" height="${bH}" rx="1.2" fill="${col}" opacity="0.82"/>`;
-    if(data.length<=10&&val>0) rects+=`<text x="${xp(i)}" y="${yp(val)-1.5}" text-anchor="middle" font-size="3" fill="${C.textMid}">${fmtH(val)}</text>`;
-    if(showL) labels+=`<text x="${xp(i)}" y="${H-1}" text-anchor="middle" font-size="3.4" fill="${C.textSoft}">${d.shortLabel||""}</text>`;
-  });
-  lines+=`<text x="${W-padR+1}" y="${yp(TARGET_MIN)+1}" font-size="3" fill="${C.blue}aa">min</text>`;
-  lines+=`<text x="${W-padR+1}" y="${yp(TARGET_MAX)+1}" font-size="3" fill="${C.blue}aa">max</text>`;
 
-  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:${height}px;display:block" preserveAspectRatio="none">${lines}${rects}${labels}</svg>`;
+  // target zone shading
+  rects+=`<rect x="${padL}" y="${yp(TARGET_MAX)}" width="${gW}" height="${yp(TARGET_MIN)-yp(TARGET_MAX)}" fill="${C.blue}20" rx="3"/>`;
+
+  // horizontal grid lines + Y axis labels
+  [0,5,10,15,20,25].filter(v=>v<=max+1).forEach(v=>{
+    lines+=`<line x1="${padL}" x2="${W-padR}" y1="${yp(v)}" y2="${yp(v)}" stroke="${C.border}" stroke-width="${v===0?1:0.5}" stroke-dasharray="${v===0?"":"3,2"}"/>`;
+    lines+=`<text x="${padL-5}" y="${yp(v)+3}" text-anchor="end" font-size="9" fill="${C.textSoft}" font-family="DM Sans,sans-serif">${v}h</text>`;
+  });
+
+  // target zone labels
+  lines+=`<text x="${W-padR+2}" y="${yp(TARGET_MIN)+3}" font-size="7.5" fill="${C.blueDeep}bb" font-family="DM Sans,sans-serif">18h</text>`;
+  lines+=`<text x="${W-padR+2}" y="${yp(TARGET_MAX)+3}" font-size="7.5" fill="${C.blueDeep}bb" font-family="DM Sans,sans-serif">20h</text>`;
+
+  // X axis labels — show only 6 evenly spaced
+  const step = Math.max(1, Math.floor(n/6));
+  const labelIndices = new Set();
+  for(let i=0;i<n;i+=step) labelIndices.add(i);
+  labelIndices.add(n-1);
+
+  // bars + labels
+  data.forEach((d,i)=>{
+    const val=d[valueKey]||0;
+    const bH=Math.max((val/max)*gH, 1.5);
+    const col=colorFn?colorFn(d):C.green;
+    const x=xp(i);
+    rects+=`<rect x="${x-barW/2}" y="${yp(val)}" width="${barW}" height="${bH}" rx="2.5" fill="${col}" opacity="0.88"/>`;
+    // value label on top of bar if enough space
+    if(n<=15 && val>0){
+      rects+=`<text x="${x}" y="${yp(val)-3}" text-anchor="middle" font-size="7" fill="${col}" font-family="DM Sans,sans-serif" font-weight="600">${val.toFixed(1)}</text>`;
+    }
+    if(labelIndices.has(i)){
+      labels+=`<text x="${x}" y="${H-4}" text-anchor="middle" font-size="8.5" fill="${C.textMid}" font-family="DM Sans,sans-serif">${d.shortLabel||""}</text>`;
+    }
+  });
+
+  return `<svg viewBox="0 0 ${W} ${H}" style="width:100%;height:${height}px;display:block;overflow:visible">${lines}${rects}${labels}</svg>`;
 };
 
 // ─── Ring SVG ─────────────────────────────────────────────────────────────────
@@ -271,22 +295,61 @@ const ringHTML = (pct, color, label, sub, size=118) => {
 // ─── Timeline ─────────────────────────────────────────────────────────────────
 const timelineHTML = sessions => {
   const tf=ts=>(new Date(ts).getHours()*60+new Date(ts).getMinutes())/(24*60);
-  const blocks=sessions.map(s=>{const l=tf(s.start)*100,w=Math.max((tf(s.end)-tf(s.start))*100,0.7);return`<div class="tl-block" style="left:${l}%;width:${w}%"></div>`;}).join("");
-  const ticks=[0,6,12,18].map(h=>`<div class="tl-tick" style="left:${h/24*100}%"><span class="tl-tick-lbl">${h}h</span></div>`).join("");
-  return `<p class="micro">Répartition sur 24h</p><div class="timeline-bar">${blocks}${ticks}</div>`;
+  const blocks=sessions.map(s=>{
+    const l=tf(s.start)*100, w=Math.max((tf(s.end)-tf(s.start))*100,1.2);
+    const dur=fmtDur(s.end-s.start);
+    return `<div style="position:absolute;top:0;bottom:0;left:${l}%;width:${w}%;background:${C.blueDeep};border-radius:4px;opacity:0.78;display:flex;align-items:center;justify-content:center;overflow:hidden;">${w>8?`<span style="font-size:9px;color:#fff;font-weight:700;white-space:nowrap;padding:0 3px">${dur}</span>`:""}</div>`;
+  }).join("");
+  const tickHours=[0,3,6,9,12,15,18,21,24];
+  const tickMarks=tickHours.map(h=>`<div style="position:absolute;left:${h/24*100}%;top:0;bottom:0;border-left:1px solid ${h===0||h===24?'#7A7066':'#DDD9D0'};"></div>`).join("");
+  const tickLabels=tickHours.filter(h=>h<24).map(h=>`<span style="position:absolute;left:${h/24*100}%;font-size:9px;color:#A89F94;font-family:'DM Sans',sans-serif;transform:translateX(-50%);white-space:nowrap;">${h}h</span>`).join("");
+  return `
+    <p class="micro" style="margin-bottom:8px">Répartition sur 24h</p>
+    <div style="position:relative;height:34px;background:#EDE9E2;border-radius:8px;overflow:hidden;">${tickMarks}${blocks}</div>
+    <div style="position:relative;height:18px;margin-top:3px;">${tickLabels}</div>`;
 };
 
 // ─── Dot Calendar ─────────────────────────────────────────────────────────────
 const dotCalendar = dayStats => {
-  const last35=Array.from({length:35},(_,i)=>{const d=new Date();d.setDate(d.getDate()-(34-i));const k=d.toISOString().slice(0,10),found=dayStats.find(x=>x.key===k);return{k,status:found?found.status:"none",h:found?.h||0};});
-  const hdrs=["L","M","M","J","V","S","D"].map(d=>`<div class="dot-hdr">${d}</div>`).join("");
-  const cells=last35.map(({k,status,h})=>{
-    const bg=status==="none"?C.bgSoft:C[status]+"2a", bd=status==="none"?C.border:C[status]+"77";
-    const dot=status!=="none"?`<div class="dot" style="background:${C[status]}"></div>`:"";
-    return `<div class="dot-cell" style="background:${bg};border:1.5px solid ${bd}" title="${shortDay(k)} · ${fmtH(h)}">${dot}</div>`;
+  const last35=Array.from({length:35},(_,i)=>{
+    const d=new Date(); d.setDate(d.getDate()-(34-i));
+    const k=d.toISOString().slice(0,10);
+    const found=dayStats.find(x=>x.key===k);
+    const dayNum=d.getDate();
+    return{k,status:found?found.status:"none",h:found?.h||0,dayNum};
+  });
+  const hdrs=["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"].map(d=>`
+    <div style="text-align:center;font-size:10px;color:${C.textSoft};font-weight:700;padding-bottom:4px;font-family:'DM Sans',sans-serif">${d}</div>`).join("");
+
+  const colorMap = {
+    green: { bg:"#52B78820", border:"#52B78866", dot:"#52B788", text:"#2C8C60" },
+    orange:{ bg:"#E8935020", border:"#E8935066", dot:"#E89350", text:"#B86020" },
+    red:   { bg:"#C0736B20", border:"#C0736B66", dot:"#C0736B", text:"#943030" },
+    none:  { bg:C.bgSoft,    border:C.border,    dot:null,      text:C.textSoft }
+  };
+
+  const cells=last35.map(({k,status,h,dayNum})=>{
+    const col=colorMap[status];
+    const isToday=k===todayKey();
+    const todayRing=isToday?`box-shadow:0 0 0 2px ${C.blueDeep};`:"";
+    return `<div style="aspect-ratio:1;border-radius:10px;background:${col.bg};border:1.5px solid ${isToday?C.blueDeep:col.border};${todayRing}display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:default" title="${shortDay(k)}${h>0?" · "+fmtH(h):""}">
+      <span style="font-size:12px;font-weight:700;color:${isToday?C.blueDeep:col.text};font-family:'DM Sans',sans-serif;line-height:1">${dayNum}</span>
+      ${status!=="none"?`<span style="font-size:9px;color:${col.text};font-family:'DM Sans',sans-serif;line-height:1">${h.toFixed(0)}h</span>`:""}
+    </div>`;
   }).join("");
-  const legend=["green","orange","red"].map(k=>`<span class="legend-item"><span class="legend-dot" style="background:${C[k]}"></span>${SL[k]}</span>`).join("");
-  return `<p class="sec-title">Calendrier — 5 semaines</p><div class="dot-grid">${hdrs}${cells}</div><div class="legend">${legend}</div>`;
+
+  const legendItems=[
+    {color:"#52B788", label:"Objectif ✓"},
+    {color:"#E89350", label:"En dessous"},
+    {color:"#C0736B", label:"Au-dessus"},
+  ].map(l=>`<span style="display:flex;align-items:center;gap:5px;font-size:11px;color:${C.textMid};font-family:'DM Sans',sans-serif">
+    <span style="width:10px;height:10px;border-radius:50%;background:${l.color};display:inline-block;flex-shrink:0"></span>${l.label}
+  </span>`).join("");
+
+  return `
+    <p class="sec-title">Calendrier — 5 semaines</p>
+    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:12px">${hdrs}${cells}</div>
+    <div style="display:flex;gap:14px;flex-wrap:wrap">${legendItems}</div>`;
 };
 
 // ─── Render ───────────────────────────────────────────────────────────────────
@@ -298,16 +361,18 @@ const render = () => {
 
   // TODAY content
   const todayContent = `
-    <div class="card summary-card">
-      ${ringHTML(todayH/TARGET_MAX, C[todayStatus], fmtH(todayH), "Bobby Blue")}
-      <div class="ring-info">
-        <span class="status-pill" style="${pillStyle}">${SL[todayStatus]}</span>
-        <span class="info-text">${todaySess.length} sieste${todaySess.length!==1?"s":""}</span>
-        ${todayH<TARGET_MIN?`<span class="info-small">encore <strong style="color:#2C2825">${fmtH(TARGET_MIN-todayH)}</strong> pour l'objectif</span>`:""}
-        ${todaySess.length>0?`<span class="info-small">moy. <strong style="color:#2C2825">${fmtDur(todaySess.reduce((a,s)=>a+(s.end-s.start),0)/todaySess.length)}</strong></span>`:""}
+    <div class="card">
+      <div class="summary-card" style="margin-bottom:${todaySess.length>0?'16px':'0'}">
+        ${ringHTML(todayH/TARGET_MAX, C[todayStatus], fmtH(todayH), "Bobby Blue")}
+        <div class="ring-info">
+          <span class="status-pill" style="${pillStyle}">${SL[todayStatus]}</span>
+          <span class="info-text">${todaySess.length} sieste${todaySess.length!==1?"s":""}</span>
+          ${todayH<TARGET_MIN?`<span class="info-small">encore <strong style="color:#2C2825">${fmtH(TARGET_MIN-todayH)}</strong> pour l'objectif</span>`:""}
+          ${todaySess.length>0?`<span class="info-small">moy. <strong style="color:#2C2825">${fmtDur(todaySess.reduce((a,s)=>a+(s.end-s.start),0)/todaySess.length)}</strong></span>`:""}
+        </div>
       </div>
+      ${todaySess.length>0?timelineHTML([...todaySess].sort((a,b)=>a.start-b.start)):`<p style="color:${C.textSoft};font-size:12px;font-style:italic;margin-top:4px">Aucune sieste enregistrée — la timeline apparaîtra ici.</p>`}
     </div>
-    ${todaySess.length>0?`<div class="card">${timelineHTML(todaySess)}</div>`:""}
     <div class="card">
       <p class="sec-title">Ajouter une sieste</p>
       <div class="form-mb">
@@ -456,5 +521,6 @@ window.delSession = id => {
 // ─── Boot ─────────────────────────────────────────────────────────────────────
 init();
 </script>
+
 </body>
 </html>
