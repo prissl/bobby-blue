@@ -169,11 +169,11 @@ const makeSeed = () => {
 };
 
 // ─── State ────────────────────────────────────────────────────────────────────
-let state = { tab:"today", period:"days", sessions:[], fDate:todayKey(), fStart:"", fEnd:"", fErr:"" };
+let state = { tab:"today", period:"days", sessions:[], fDate:todayKey(), fStart:"", fEnd:"", fErr:"", viewDate:todayKey() };
 
 const init = () => {
   const data = loadData();
-  state.sessions = data.sessions?.length ? data.sessions : makeSeed();
+  state.sessions = data.sessions || [];
   render();
 };
 
@@ -181,8 +181,8 @@ const setState = patch => { Object.assign(state,patch); saveData({sessions:state
 
 // ─── Computed ─────────────────────────────────────────────────────────────────
 const getComputed = () => {
-  const { sessions } = state;
-  const todaySess = sessions.filter(s=>s.date===todayKey()).sort((a,b)=>b.start-a.start);
+  const { sessions, viewDate } = state;
+  const todaySess = sessions.filter(s=>s.date===viewDate).sort((a,b)=>b.start-a.start);
   const todayMs = todaySess.reduce((a,s)=>a+(s.end-s.start),0);
   const todayH = todayMs/3600000;
 
@@ -350,13 +350,23 @@ const dotCalendar = dayStats => {
 
 // ─── Render ───────────────────────────────────────────────────────────────────
 const render = () => {
-  const { tab, period, fDate, fStart, fEnd, fErr, sessions } = state;
+  const { tab, period, fDate, fStart, fEnd, fErr, sessions, viewDate } = state;
   const { todaySess, todayH, dayStats, last30, weekStats, monthStats, greenCount, avgH30, peakH } = getComputed();
   const todayStatus = statusOf(todayH);
   const pillStyle = `background:${C[todayStatus]}22;color:${C[todayStatus]};border:1px solid ${C[todayStatus]}44`;
 
   // TODAY content
+  const isToday = viewDate === todayKey();
+  const viewLabel = isToday ? "Aujourd'hui" : dateLabel(viewDate);
+  const prevDate = (() => { const d=new Date(viewDate+"T12:00:00"); d.setDate(d.getDate()-1); return d.toISOString().slice(0,10); })();
+  const nextDate = (() => { const d=new Date(viewDate+"T12:00:00"); d.setDate(d.getDate()+1); return d.toISOString().slice(0,10); })();
+  const resetBtn = todaySess.length > 0 ? `<button onclick="resetDay('${viewDate}')" style="width:100%;padding:11px;background:transparent;border:1.5px solid ${C.red}55;border-radius:11px;font-size:13px;font-weight:600;font-family:'DM Sans',sans-serif;color:${C.red};margin-top:4px;">🗑 Effacer toutes les siestes de ce jour</button>` : "";
   const todayContent = `
+    <div class="card" style="display:flex;justify-content:space-between;align-items:center;padding:10px 16px;">
+      <button onclick="setViewDate('${prevDate}')" style="background:none;border:none;font-size:22px;color:${C.textMid};padding:0 4px;">‹</button>
+      <span style="font-size:14px;font-weight:700;color:${C.text};font-family:'DM Sans',sans-serif">${viewLabel}</span>
+      <button onclick="setViewDate('${nextDate}')" style="background:none;border:none;font-size:22px;color:${isToday?C.border:C.textMid};padding:0 4px;" ${isToday?"disabled":""}>›</button>
+    </div>
     <div class="card">
       <div class="summary-card" style="margin-bottom:${todaySess.length>0?'16px':'0'}">
         ${ringHTML(todayH/TARGET_MAX, C[todayStatus], fmtH(todayH), "Bobby Blue")}
@@ -373,7 +383,7 @@ const render = () => {
       <p class="sec-title">Ajouter une sieste</p>
       <div class="form-mb">
         <label class="lbl">Date</label>
-        <input type="date" id="fDate" value="${fDate}" max="${todayKey()}"/>
+        <input type="date" id="fDate" value="${fDate||viewDate}" max="${todayKey()}"/>
       </div>
       <div class="form-row">
         <div class="form-col"><label class="lbl">S'endort à</label><input type="time" id="fStart" value="${fStart}"/></div>
@@ -384,7 +394,7 @@ const render = () => {
     </div>
     <div class="card">
       <p class="sec-title">Siestes du jour</p>
-      ${todaySess.length===0?`<p style="color:${C.textSoft};font-size:13px;font-style:italic">Aucune sieste enregistrée aujourd'hui.</p>`
+      ${todaySess.length===0?`<p style="color:${C.textSoft};font-size:13px;font-style:italic">Aucune sieste enregistrée.</p>`
         :todaySess.map(s=>`
         <div class="nap-row">
           <div class="nap-bar"></div>
@@ -392,6 +402,7 @@ const render = () => {
           <span class="nap-dur">${fmtDur(s.end-s.start)}</span>
           <button class="del-btn" onclick="delSession('${s.id}')">✕</button>
         </div>`).join("")}
+      ${resetBtn}
     </div>`;
 
   // STATS content
@@ -494,6 +505,8 @@ const render = () => {
 // ─── Actions ──────────────────────────────────────────────────────────────────
 window.setTab    = t => setState({tab:t});
 window.setPeriod = p => setState({period:p});
+window.setViewDate = d => setState({viewDate:d, fDate:d, fStart:'', fEnd:'', fErr:''});
+window.resetDay  = date => { if(!confirm('Effacer toutes les siestes de ce jour ?')) return; setState({sessions:state.sessions.filter(s=>s.date!==date)}); };
 
 window.addSession = () => {
   const fDate=document.getElementById("fDate")?.value||state.fDate;
