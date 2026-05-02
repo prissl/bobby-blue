@@ -420,7 +420,8 @@ const render = () => {
         <span class="kpi-val" style="color:${C.orange}">${peakH}h</span>
         <span class="kpi-lbl">pic de\nsommeil</span>
       </div>
-    </div>`;
+    </div>
+    <div style="text-align:center;margin-bottom:12px;"><button onclick="resetAll()" style="padding:6px 14px;background:transparent;border:1px solid ${C.border};border-radius:20px;font-size:11px;font-family:'DM Sans',sans-serif;color:${C.textSoft};">Réinitialiser les données</button></div>`;
 
   const periodTabs = ["days","weeks","months"].map(v=>`<button class="period-btn${period===v?" active":""}" onclick="setPeriod('${v}')">${v==="days"?"Jours":v==="weeks"?"Semaines":"Mois"}</button>`).join("");
 
@@ -507,6 +508,7 @@ window.setTab    = t => setState({tab:t});
 window.setPeriod = p => setState({period:p});
 window.setViewDate = d => setState({viewDate:d, fDate:d, fStart:'', fEnd:'', fErr:''});
 window.resetDay  = date => { if(!confirm('Effacer toutes les siestes de ce jour ?')) return; setState({sessions:state.sessions.filter(s=>s.date!==date)}); };
+window.resetAll  = () => { if(!confirm('Effacer toutes les données ? Cette action est irréversible.')) return; setState({sessions:[]}); };
 
 window.addSession = () => {
   const fDate=document.getElementById("fDate")?.value||state.fDate;
